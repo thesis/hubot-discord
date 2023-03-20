@@ -76,6 +76,7 @@ export class DiscordBot extends Adapter {
     });
     this.robot.client = this.client;
 
+    this.client.on('threadCreate', this.joinThread);
     this.client.on('ready', this.ready);
     this.client.on('message', this.message);
     this.client.on('guildMemberAdd', this.enter);
@@ -119,6 +120,10 @@ export class DiscordBot extends Adapter {
       }
     }
     return text;
+  }
+
+  joinThread = async (thread) => {
+    await thread.join()
   }
 
   hasPermission = (channel, user) => {
