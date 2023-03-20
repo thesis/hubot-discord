@@ -49,7 +49,7 @@ Response.prototype.react = function () {
   ].concat(strings));
 };
 
-class DiscordBot extends Adapter {
+export class DiscordBot extends Adapter {
   constructor(robot) {
     this.rooms = {};
     this.robot = robot
