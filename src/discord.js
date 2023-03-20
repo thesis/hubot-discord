@@ -51,6 +51,8 @@ Response.prototype.react = function () {
 
 export class DiscordBot extends Adapter {
   constructor(robot) {
+    super(robot);
+
     this.rooms = {};
     this.robot = robot
     if (process.env.HUBOT_DISCORD_TOKEN == null) {
