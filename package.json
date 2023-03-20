@@ -1,9 +1,10 @@
 {
   "name": "hubot-discord",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0-alpha.2",
   "description": "Hubot adapter for discord",
   "type": "module",
   "main": "src/discord.js",
+  "types": "./types.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
