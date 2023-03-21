@@ -1,6 +1,6 @@
 {
   "name": "hubot-discord",
-  "version": "3.0.0-alpha.6",
+  "version": "3.0.0-alpha.7",
   "description": "Hubot adapter for discord",
   "type": "module",
   "main": "src/discord.js",
