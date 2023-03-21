@@ -10,10 +10,10 @@ class ReactionMessage extends Message {
    // item_user - A String indicating the user that posted the item.
    // item      - An Object identifying the target message, file, or comment item.
    // event_ts  - A String of the reaction event timestamp.
-   constructor(type, user1, reaction, item_user, item, event_ts) {
+   constructor(type, user, reaction, item_user, item, event_ts) {
       super(user);
       this.type = type;
-      this.user = user1;
+      this.user = user;
       this.reaction = reaction;
       this.item_user = item_user;
       this.item = item;

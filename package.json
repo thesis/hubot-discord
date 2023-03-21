@@ -1,6 +1,6 @@
 {
   "name": "hubot-discord",
-  "version": "3.0.0-alpha.4",
+  "version": "3.0.0-alpha.5",
   "description": "Hubot adapter for discord",
   "type": "module",
   "main": "src/discord.js",
@@ -9,11 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "discord.js": "^11.2.1",
     "request": "^2.79.0",
     "parent-require": "^1.0.0"
   },
   "peerDependencies": {
+    "discord.js": "^11.2.1",
     "hubot": ">=2.0"
   },
   "devDependencies": {
