@@ -79,7 +79,9 @@ export class DiscordBot extends Adapter {
 
     this.client.on('threadCreate', this.joinThread);
     this.client.on('ready', this.ready);
-    this.client.on('message', this.message);
+    this.client.on('messageCreate', this.message);
+    // Treat message edits as new messages, for now.
+    this.client.on('messageUpdate', this.message);
     this.client.on('guildMemberAdd', this.enter);
     this.client.on('guildMemberRemove', this.leave);
     this.client.on('disconnected', this.disconnected);
