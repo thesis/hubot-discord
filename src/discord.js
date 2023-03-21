@@ -69,6 +69,7 @@ export class DiscordBot extends Adapter {
       autoReconnect: true,
       fetch_all_members: true,
       api_request_method: 'burst',
+      intents: ["Guilds", "GuildMembers", "MessageContent", "GuildMessages"],
       ws: {
         compress: true,
         large_threshold: 1000
