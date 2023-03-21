@@ -183,7 +183,8 @@ export class DiscordBot extends Adapter {
       //post-connect actions
       this.rooms[channel.id] = channel;
     }
-    return this.client.user.setActivity(currentlyPlaying).then(this.robot.logger.debug(`Status set to ${currentlyPlaying}`)).catch(this.robot.logger.error);
+    this.client.user.setActivity(currentlyPlaying)
+    this.robot.logger.debug(`Status set to ${currentlyPlaying}`)
   }
 
   enter = (member) => {
