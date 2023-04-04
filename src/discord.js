@@ -153,13 +153,11 @@ export class DiscordBot extends Adapter {
     if (this.rooms[channelId] != null) {
       channel = this.rooms[channelId];
     } else {
-      channels = this.client.channels.filter(function (channel) {
-        return channel.id === channelId;
-      });
-      if (channels.first() != null) {
+      channels = this.client.channels.cache.get(channelId)
+      if (channels != null) {
         channel = channels.first();
       } else {
-        channel = this.client.users.get(channelId);
+        channel = this.client.users.cache.get(channelId);
       }
     }
     return channel;
