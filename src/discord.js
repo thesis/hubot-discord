@@ -261,9 +261,9 @@ export class DiscordBot extends Adapter {
       return channel.send(message, {
         split: true
       }).then(function (msg) {
-        return that._send_success_callback(that, channel, message, msg);
+        return that.sendSuccessCallback(that, channel, message, msg);
       }).catch(function (error) {
-        return that._send_fail_callback(that, channel, message, error);
+        return that.sendFailCallback(that, channel, message, error);
       });
     } else {
       return this.sendFailCallback(this, channel, message, "Invalid Channel");
@@ -283,12 +283,12 @@ export class DiscordBot extends Adapter {
         this.robot.logger.info(reaction);
         results.push(channel.fetchMessage(messageId).then(function (message) {
           return message.react(reaction).then(function (msg) {
-            return that._send_success_callback(that, channel, message, msg);
+            return that.sendSuccessCallback(that, channel, message, msg);
           }).catch(function (error) {
-            return that._send_fail_callback(that, channel, message, error);
+            return that.sendFailCallback(that, channel, message, error);
           });
         }).catch(function (error) {
-          return that._send_fail_callback(that, channel, reaction, error);
+          return that.sendFailCallback(that, channel, reaction, error);
         }));
       }
       return results;
