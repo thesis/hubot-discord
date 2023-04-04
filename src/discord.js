@@ -155,7 +155,7 @@ export class DiscordBot extends Adapter {
     } else {
       channels = this.client.channels.cache.get(channelId)
       if (channels != null) {
-        channel = channels.first();
+        channel = channels;
       } else {
         channel = this.client.users.cache.get(channelId);
       }
